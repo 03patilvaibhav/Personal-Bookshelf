@@ -1,0 +1,47 @@
+/* src/pages/SearchPage.css */
+.search-page {
+    padding: 20px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .bookshelf-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bookshelf-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .search-results {
+    margin-top: 20px;
+  }
+  
+  .loader {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 8px solid rgba(0, 123, 255, 0.2);
+    border-radius: 50%;
+    border-top-color: #007bff;
+    animation: spin 1s linear infinite;
+    margin: 0 auto; /* Center the loader */
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
