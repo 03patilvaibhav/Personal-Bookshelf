@@ -1,37 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const BookCard = ({ book }) => {
-  
-  const [addedBooks, setAddedBooks] = useState([]);
+const BookCard = ({ book, onAddToBookshelf }) => {
+  const [isAdded, setIsAdded] = useState(false);
 
-  useEffect(() => {
-    const storedBooks = JSON.parse(localStorage.getItem('bookshelf')) || [];
-    setAddedBooks(storedBooks);
-  }, []);
-
-  // const onAddToBookshelf = (book) => {
-  //   const updatedBooks = [...addedBooks, book.key];
-  //   setAddedBooks(updatedBooks);
-  //   localStorage.setItem('bookshelf', JSON.stringify(updatedBooks));
-  // };
-  const onAddToBookshelf = (book) => {
-    const storedBooks = JSON.parse(localStorage.getItem('bookshelf')) || [];
-    const updatedBooks = [...storedBooks, book.key];
-    setAddedBooks(updatedBooks);
-    localStorage.setItem('bookshelf', JSON.stringify(updatedBooks));
-  };
-  
-
-  const isBookAdded = (book) => {
-    return addedBooks.includes(book.key);
+  const handleAddToBookshelf = () => {
+    onAddToBookshelf(book);
+    setIsAdded(true); 
+    
+    setTimeout(() => {
+      setIsAdded(false);
+    }, 1500); 
   };
 
   return (
     <div className="book-card">
       <h3>{book.title}</h3>
       <p>{book.author_name ? book.author_name.join(', ') : 'Unknown Author'}</p>
-      <button onClick={() => onAddToBookshelf(book)} disabled={isBookAdded(book)}>
-        {isBookAdded(book) ? 'Added' : 'Add to Shelf'}
+      <button onClick={handleAddToBookshelf} disabled={isAdded}>
+        {isAdded ? 'Added ✓' : 'Add to Bookshelf'}
       </button>
     </div>
   );

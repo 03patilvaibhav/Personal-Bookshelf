@@ -1,7 +1,7 @@
 
 import './App.css';
 
-// src/App.js
+
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SearchPage from './pages/Searchpage';

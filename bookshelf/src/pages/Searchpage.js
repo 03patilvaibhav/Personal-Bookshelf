@@ -1,10 +1,10 @@
-// src/pages/SearchPage.js
+
 import React, { useState, useCallback } from 'react';
 import axios from 'axios';
 import SearchBar from '../components/Searchbar';
 import BookCard from '../components/Bookcard';
 import { Link } from 'react-router-dom';
-import '../pages/searchpage.css'; // Make sure to import the CSS file
+import '../pages/searchpage.css'; 
 
 const SearchPage = ({ onAddToBookshelf }) => {
   const [books, setBooks] = useState([]);

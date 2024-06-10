@@ -1,8 +1,8 @@
-// src/pages/BookshelfPage.js
+
 import React from 'react';
 import Bookshelf from '../components/Bookshelf';
 import { Link } from 'react-router-dom';
-import '../pages/bookshelfpage.css'; // Make sure to import the CSS file
+import '../pages/bookshelfpage.css'; 
 
 const BookshelfPage = ({ bookshelf }) => {
   console.log('Bookshelf in SearchPage:', bookshelf);

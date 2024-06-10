@@ -1,4 +1,4 @@
-// src/components/SearchBar.js
+
 import React, { useState, useEffect, useRef } from 'react';
 import '../components/searchbar.css';
 const SearchBar = ({ onSearch }) => {
@@ -9,11 +9,11 @@ const SearchBar = ({ onSearch }) => {
     if (debounceTimeout.current) {
       clearTimeout(debounceTimeout.current);
     }
-    // Call onSearch immediately to handle loader
+    
     onSearch(query);
     debounceTimeout.current = setTimeout(() => {
       onSearch(query);
-    }, 500); // Adjust the delay as needed
+    }, 500); 
 
     return () => {
       if (debounceTimeout.current) {
